@@ -6,15 +6,13 @@ import { Grid, Row, Col } from 'react-bootstrap';
 
 function InputBox(props) {
 	return (
-<span>
-	text 
-</span>
+		<TextField
+			label={props.type}
+			onChange={e => props.handleChange(e)}
+		/>
 	);
 }
-			// <TextField
-			// 	label={props.type}
-			// 	onChange={e => props.handleChange(e)}
-	        // />
+
 
 // <input type="text" name={this.props.type} onChange={e => this.props.handleChange(e)} />
 export default class InputArea extends React.Component {
@@ -64,14 +62,14 @@ export default class InputArea extends React.Component {
 	render() {
 		return (
 			<Row className="inputarea">
-			<Col md={4}>
-			Input a Location of Choice
+				<Col md={4}>
+					Input a Location of Choice
 			<InputBox type="Latitude" handleChange={e => this.changeLat(e)} />
-			<InputBox type="Longitude" handleChange={e => this.changeLng(e)} />
-			</Col>
-			<Col md={4}>
-			<Button color="secondary" className="inputbutton" variant="contained" onClick={() => this.onClick()}> Get Location </Button>
-			</Col>
+					<InputBox type="Longitude" handleChange={e => this.changeLng(e)} />
+				</Col>
+				<Col md={4}>
+					<Button color="secondary" className="inputbutton" variant="contained" onClick={() => this.onClick()}> Get Location </Button>
+				</Col>
 			</Row>
 		);
 	}
