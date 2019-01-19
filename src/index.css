@@ -1,0 +1,32 @@
+* {
+  font-family: Roboto;  
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+div {
+  margin-top: 10px;
+}
+
+.inputarea {
+ margin-top: 20px; 
+}
+
+
+.location {
+  font-size: 20pt;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.row {
+  margin-top: 10px;
+}
+
+.textfield {
+  padding:0px;
+}
