@@ -42,8 +42,8 @@ export default class RandomArea extends React.Component {
 	render() {
 		return (
 			<Row>
-			<Col className="text-left" xs={4}>Choose a Random Vacation Spot!</Col>
-			<Col className="text-left" xs={4}><RandomButton onClick={() => this.getRandomPlace()}/></Col>
+			<Col className="text-left" md={6}>Choose a Random Vacation Spot!</Col>
+			<Col className="text-left" md={6}><RandomButton onClick={() => this.getRandomPlace()}/></Col>
 			</Row>
 		);
 	}

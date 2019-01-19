@@ -62,12 +62,12 @@ export default class InputArea extends React.Component {
 	render() {
 		return (
 			<Row className="inputarea">
-				<Col md={4}>
-					Input a Location of Choice
-			<InputBox type="Latitude" handleChange={e => this.changeLat(e)} />
+				<Col md={6}>
+					Choose Location
+					<InputBox type="Latitude" handleChange={e => this.changeLat(e)} />
 					<InputBox type="Longitude" handleChange={e => this.changeLng(e)} />
 				</Col>
-				<Col md={4}>
+				<Col md={6}>
 					<Button color="secondary" className="inputbutton" variant="contained" onClick={() => this.onClick()}> Get Location </Button>
 				</Col>
 			</Row>

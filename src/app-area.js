@@ -28,16 +28,17 @@ export default class AppArea extends React.Component {
 			<div>
 				<AppBar position="static" color='primary'>
 					<Toolbar>
-							Random Vacation Picker
+						Random Vacation Picker
 					</Toolbar>
-		  		</AppBar>
-				<Grid > <RandomArea setTotalState={(state) => this.setTotalState(state)}/>
-					<InputArea 
-					changeLat={(e) => this.changeLat(e)} 
-					changeLng={(e) => this.changeLng(e)}  
-					setTotalState={(state) => this.setTotalState(state)} />
-				</Grid> 
-				<MyMap	lat={this.state.lat} lng={this.state.lng} />
+				</AppBar>
+				<Grid >
+					<RandomArea setTotalState={(state) => this.setTotalState(state)} />
+					<InputArea
+						changeLat={(e) => this.changeLat(e)}
+						changeLng={(e) => this.changeLng(e)}
+						setTotalState={(state) => this.setTotalState(state)} />
+				</Grid>
+				<MyMap lat={this.state.lat} lng={this.state.lng} />
 				<Location locData={this.state.locData} lat={this.state.lat} lng={this.state.lng} />
 			</div>
 		);

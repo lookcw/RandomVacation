@@ -25,7 +25,7 @@ export default class MyMap extends React.Component {
 			<MapWithAMarker className="mymap"
 				googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUGI5_aCtLUVLHNQ9op4ba_4buTbAG3wQ&v=3.exp&libraries=geometry,drawing,places"
 				loadingElement={<div style={{ height: `100%` }} />}
-		containerElement = { <div style={{ height: `800px`, width:`800px`,}} /> }
+		containerElement = { <div style={{ height: `600px`, width:`600px`,}} /> }
 		mapElement = { <div style={{ height: `100%` }} /> }
 		lat = { this.props.lat }
 		lng = { this.props.lng }
