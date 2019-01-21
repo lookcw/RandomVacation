@@ -31,7 +31,7 @@ export default class AppArea extends React.Component {
 						Random Vacation Picker
 					</Toolbar>
 				</AppBar>
-				<Grid >
+				<Grid id="grid">
 					<RandomArea setTotalState={(state) => this.setTotalState(state)} />
 					<InputArea
 						changeLat={(e) => this.changeLat(e)}
