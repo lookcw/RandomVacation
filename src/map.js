@@ -9,7 +9,7 @@ import {
 const MapWithAMarker = withScriptjs(withGoogleMap(props =>
 	<GoogleMap
 		center={{lat: props.lat, lng: props.lng}}
-		zoom={6}
+		zoom={4}
 		mapTypeId="hybrid">
 		<Marker
 			position={{ lat: props.lat, lng: props.lng }}

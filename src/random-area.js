@@ -6,7 +6,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { Typography } from '@material-ui/core';
 
 function RandomButton(props) {
-	return <Button color="secondary" variant="contained" className="randombutton" onClick={() => props.onClick()}><Typography variant="h5">Throw a dart!</Typography></Button>
+	return <Button color="secondary" variant="contained" className="randombutton" onClick={() => props.onClick()}><Typography variant="h5">Throw a dart</Typography></Button>
 }
 
 export default class RandomArea extends React.Component {

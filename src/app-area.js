@@ -27,16 +27,16 @@ export default class AppArea extends React.Component {
 	render() {
 		return (
 			<div>
-				<AppBar position="static" color='primary'>
-					<Toolbar>
-						<Typography variant="h3" color="tertiary">
+				{/* <AppBar position="static" color='primary'>
+					<Toolbar className="banner">
+						<Typography variant="h2" color="tertiary">
 							Random Vacation Picker
 						</Typography>
 					</Toolbar>
-				</AppBar>
+				</AppBar> */}
 				<Grid className="colcentered">
 					<Row>
-						<Col md={5}><Typography variant="h2"> Choose a Vacation Spot</Typography></Col>
+						<Col md={5}><Typography variant="h2"> Suprise yourself!</Typography></Col>
 						<Col md={2}><Typography variant="h2"> OR</Typography></Col>
 						<Col md={5}> <Typography variant="h2"> Input a Location</Typography> </Col>
 					</Row>
@@ -53,8 +53,8 @@ export default class AppArea extends React.Component {
 							/>
 						</Col>
 					</Row>
-					<MyMap lat={this.state.lat} lng={this.state.lng} />
 					<Location locData={this.state.locData} lat={this.state.lat} lng={this.state.lng} />
+					<MyMap lat={this.state.lat} lng={this.state.lng} />
 				</Grid>
 			</div>
 		);
