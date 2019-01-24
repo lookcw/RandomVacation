@@ -55,7 +55,8 @@ export default class Location extends React.Component {
 			Longitude: ${this.state.lng}`
 		return (
 			<div className='location'>
-			{this.state.formatted_address}
+			{this.state.formatted_address} <br />
+			latitude:{this.state.lat}<span>&nbsp;&nbsp;&nbsp;</span>longitude:{this.state.lng}
 		</div>);
 	}
 }

@@ -3,12 +3,18 @@ import getPlace from './get-place';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { Grid, Row, Col } from 'react-bootstrap';
+import { Typography } from '@material-ui/core';
+
 
 function InputBox(props) {
 	return (
 		<TextField
+			className="inputbox"
 			label={props.type}
+			style={{ padding: 0 }}
+			placeholder={props.type}
 			onChange={e => props.handleChange(e)}
+			variant="filled"
 		/>
 	);
 }
@@ -22,13 +28,14 @@ export default class InputArea extends React.Component {
 		this.state = {
 			lat: null,
 			lng: null,
+			isNum: true,
 		}
 	}
 
 	async onClick() {
-		let lat = this.state.lat;
-		let lng = this.state.lng;
-		if (lat && lng && lat >= -90 & lat <= 90 && lng >= -180 && lng <= 180) {
+		let lat = parseFloat(this.state.lat);
+		let lng = parseFloat(this.state.lng);
+		if (!isNaN(lat) && !isNaN(lng) && lat >= -90 & lat <= 90 && lng >= -180 && lng <= 180) {
 			var click = await getPlace(lat, lng);
 			console.log("click: " + click);
 			this.props.setTotalState({
@@ -37,40 +44,35 @@ export default class InputArea extends React.Component {
 				locData: click,
 			});
 		}
+		else {
+			alert("please input valid latitude and longitude")
+		}
 	}
 
 	changeLat(e) {
-		var val = parseFloat(e.target.value);
-		if (!isNaN(val)) {
-			console.log("input lat set to: " + val);
-			this.setState({ lat: val });
-		} else {
-			alert("please input a value latitude")
-		}
+		// var val = parseFloat(e.target.value);
+		this.setState({ lat: e.target.value });
+
 	}
 
+
+
 	changeLng(e) {
-		var val = parseFloat(e.target.value);
-		if (!isNaN(val)) {
-			console.log("input lng set to: " + val);
-			this.setState({ lng: val });
-		} else {
-			alert("please input a value longitude")
-		}
+		// var val = parseFloat(e.target.value);
+		this.setState({ lng: e.target.value });
 	}
 
 	render() {
 		return (
-			<Row className="inputarea">
-				<Col md={6}>
-					Choose Location
+			<span className="inputarea">
+				<div>
 					<InputBox type="Latitude" handleChange={e => this.changeLat(e)} />
 					<InputBox type="Longitude" handleChange={e => this.changeLng(e)} />
-				</Col>
-				<Col md={6}>
-					<Button color="secondary" className="inputbutton" variant="contained" onClick={() => this.onClick()}> Get Location </Button>
-				</Col>
-			</Row>
+				</div>
+				<div>
+					<Button color="secondary" className="inputbutton" variant="contained" onClick={() => this.onClick()}> <Typography variant="h5">Get Location</Typography> </Button>
+				</div>
+			</span>
 		);
 	}
 }

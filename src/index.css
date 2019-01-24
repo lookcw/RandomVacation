@@ -8,9 +8,14 @@ div {
 }
 
 .inputarea {
- margin-top: 20px; 
+ margin-left: 20px; 
+ margin-right: 20px; 
 }
 
+.button {
+  width: 100px;
+  height: 100px;
+}
 
 .location {
   font-size: 20pt;
@@ -31,4 +36,25 @@ div {
 .container {
   margin-left: 0px;
   margin-right: 0px;
+}
+
+.mymap {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inputbox {
+  margin-left: 10px;
+}
+
+.disclaimer {
+  position: absolute;
+  bottom: 5px;
+}
+
+.colcentered {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }

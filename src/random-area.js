@@ -3,9 +3,10 @@ import getPlace from './get-place';
 import Button from '@material-ui/core/Button';
 import { Grid, Row, Col } from 'react-bootstrap';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { Typography } from '@material-ui/core';
 
 function RandomButton(props) {
-	return <Button color="secondary" variant="contained" className="randombutton" onClick={() => props.onClick()}>Throw a dart!</Button>
+	return <Button color="secondary" variant="contained" className="randombutton" onClick={() => props.onClick()}><Typography variant="h5">Throw a dart!</Typography></Button>
 }
 
 export default class RandomArea extends React.Component {
@@ -41,10 +42,9 @@ export default class RandomArea extends React.Component {
 	}
 	render() {
 		return (
-			<Row>
-			<Col className="text-left" md={6}>Choose a Random Vacation Spot!</Col>
-			<Col className="text-left" md={6}><RandomButton onClick={() => this.getRandomPlace()}/></Col>
-			</Row>
+			<span className="randomarea">
+				<RandomButton className="randombutton" onClick={() => this.getRandomPlace()} />
+			</span>
 		);
 	}
 }
