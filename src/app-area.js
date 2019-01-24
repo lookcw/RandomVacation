@@ -36,7 +36,7 @@ export default class AppArea extends React.Component {
 				</AppBar>
 				<Grid className="colcentered">
 					<Row>
-						<Col md={5}><Typography variant="h2"> Choose a Vacation Spot!</Typography></Col>
+						<Col md={5}><Typography variant="h2"> Choose a Vacation Spot</Typography></Col>
 						<Col md={2}><Typography variant="h2"> OR</Typography></Col>
 						<Col md={5}> <Typography variant="h2"> Input a Location</Typography> </Col>
 					</Row>
@@ -56,7 +56,6 @@ export default class AppArea extends React.Component {
 					<MyMap lat={this.state.lat} lng={this.state.lng} />
 					<Location locData={this.state.locData} lat={this.state.lat} lng={this.state.lng} />
 				</Grid>
-				<Disclaimer />
 			</div>
 		);
 	}
